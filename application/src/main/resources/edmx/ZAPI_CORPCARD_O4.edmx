@@ -1,0 +1,1079 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0"
+	xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+	xmlns="http://docs.oasis-open.org/odata/ns/edm">
+	<edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+		<edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+		<edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
+		<edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+		<edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value">
+		<edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value">
+		<edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+		<edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value">
+		<edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+		<edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value">
+		<edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+		<edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
+		<edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='LOCAL')/$value">
+		<edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_SESSION',Version='0001',SAP__Origin='LOCAL')/$value">
+		<edmx:Include Namespace="com.sap.vocabularies.Session.v1" Alias="SAP__session"/>
+	</edmx:Reference>
+	<edmx:DataServices>
+		<Schema Namespace="com.sap.gateway.srvd_a2x.zapi_corpcard_o4.v0001" Alias="SAP__self">
+			<Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+			<EntityType Name="MasterType">
+				<Key>
+					<PropertyRef Name="CompanyCode"/>
+					<PropertyRef Name="CardNumber"/>
+				</Key>
+				<Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+				<Property Name="CardNumber" Type="Edm.String" Nullable="false" MaxLength="16"/>
+				<Property Name="BusinessPartner" Type="Edm.String" Nullable="false" MaxLength="10"/>
+				<Property Name="DomesticLimit" Type="Edm.Decimal" Nullable="false" Precision="17" Scale="variable"/>
+				<Property Name="OverseasLimit" Type="Edm.Decimal" Nullable="false" Precision="17" Scale="variable"/>
+				<Property Name="Category" Type="Edm.String" Nullable="false" MaxLength="1"/>
+				<Property Name="CompanyName" Type="Edm.String" Nullable="false" MaxLength="50"/>
+				<Property Name="BusinessNumber" Type="Edm.String" Nullable="false" MaxLength="10"/>
+				<Property Name="CorporateNumber" Type="Edm.String" Nullable="false" MaxLength="14"/>
+				<Property Name="BusinessLocationNumber" Type="Edm.String" Nullable="false" MaxLength="10"/>
+				<Property Name="CustomerNumber" Type="Edm.String" Nullable="false" MaxLength="15"/>
+				<Property Name="CardBrand" Type="Edm.String" Nullable="false" MaxLength="1"/>
+				<Property Name="DomesticBrandCategory" Type="Edm.String" Nullable="false" MaxLength="1"/>
+				<Property Name="CardCategory" Type="Edm.String" Nullable="false" MaxLength="1"/>
+				<Property Name="CardSubCategory" Type="Edm.String" Nullable="false" MaxLength="1"/>
+				<Property Name="CardProductCategory" Type="Edm.String" Nullable="false" MaxLength="1"/>
+				<Property Name="CardGrade" Type="Edm.String" Nullable="false" MaxLength="1"/>
+				<Property Name="AffiliatedCardCode" Type="Edm.String" Nullable="false" MaxLength="6"/>
+				<Property Name="AffiliatedCardName" Type="Edm.String" Nullable="false" MaxLength="50"/>
+				<Property Name="KoreaName" Type="Edm.String" Nullable="false" MaxLength="50"/>
+				<Property Name="EnglishName" Type="Edm.String" Nullable="false" MaxLength="50"/>
+				<Property Name="IdentificationNumber" Type="Edm.String" Nullable="false" MaxLength="13"/>
+				<Property Name="ExpiryDate" Type="Edm.String" Nullable="false" MaxLength="7"/>
+				<Property Name="DepartmentCode" Type="Edm.String" Nullable="false" MaxLength="20"/>
+				<Property Name="DepartmentName" Type="Edm.String" Nullable="false" MaxLength="50"/>
+				<Property Name="BillingPostalCode" Type="Edm.String" Nullable="false" MaxLength="6"/>
+				<Property Name="BillingAddressLine1" Type="Edm.String" Nullable="false" MaxLength="100"/>
+				<Property Name="BillingAddressLine2" Type="Edm.String" Nullable="false" MaxLength="100"/>
+				<Property Name="BillingTypePayment" Type="Edm.String" Nullable="false" MaxLength="1"/>
+				<Property Name="PaymentDate" Type="Edm.String" Nullable="false" MaxLength="2"/>
+				<Property Name="PaymentBank" Type="Edm.String" Nullable="false" MaxLength="10"/>
+				<Property Name="PaymentAccountNumber" Type="Edm.String" Nullable="false" MaxLength="20"/>
+				<Property Name="MemberPhoneNumber" Type="Edm.String" Nullable="false" MaxLength="14"/>
+				<Property Name="DeclarationType" Type="Edm.String" Nullable="false" MaxLength="1"/>
+				<Property Name="CardIssueDate" Type="Edm.String" Nullable="false" MaxLength="10"/>
+				<Property Name="CardCancellationDate" Type="Edm.String" Nullable="false" MaxLength="10"/>
+				<Property Name="SuspensionDate" Type="Edm.String" Nullable="false" MaxLength="10"/>
+				<Property Name="ReissuedCardNumber" Type="Edm.String" Nullable="false" MaxLength="16"/>
+				<Property Name="OrganizationName" Type="Edm.String" Nullable="false" MaxLength="50"/>
+				<Property Name="OrganizationCard" Type="Edm.String" Nullable="false" MaxLength="20"/>
+				<Property Name="EmployeeNumber" Type="Edm.String" Nullable="false" MaxLength="10"/>
+				<Property Name="IsDelete" Type="Edm.Boolean" Nullable="false"/>
+				<Property Name="LocalCurrency" Type="Edm.String" Nullable="false" MaxLength="3"/>
+				<Property Name="ForeignCurrency" Type="Edm.String" Nullable="false" MaxLength="3"/>
+			</EntityType>
+			<EntityType Name="UserInfoType">
+				<Key>
+					<PropertyRef Name="InterfaceDate"/>
+					<PropertyRef Name="InterfaceTime"/>
+				</Key>
+				<Property Name="InterfaceDate" Type="Edm.Date" Nullable="false"/>
+				<Property Name="InterfaceTime" Type="Edm.TimeOfDay" Nullable="false"/>
+				<Property Name="Category" Type="Edm.String" Nullable="false" MaxLength="1"/>
+				<Property Name="CompanyName" Type="Edm.String" Nullable="false" MaxLength="50"/>
+				<Property Name="BusinessNumber" Type="Edm.String" Nullable="false" MaxLength="10"/>
+				<Property Name="CorporateNumber" Type="Edm.String" Nullable="false" MaxLength="14"/>
+				<Property Name="BusinessLocationNumber" Type="Edm.String" Nullable="false" MaxLength="10"/>
+				<Property Name="CustomerNumber" Type="Edm.String" Nullable="false" MaxLength="15"/>
+				<Property Name="CardBrand" Type="Edm.String" Nullable="false" MaxLength="1"/>
+				<Property Name="DomesticBrandCategory" Type="Edm.String" Nullable="false" MaxLength="1"/>
+				<Property Name="CardCategory" Type="Edm.String" Nullable="false" MaxLength="1"/>
+				<Property Name="CardSubCategory" Type="Edm.String" Nullable="false" MaxLength="1"/>
+				<Property Name="CardProductCategory" Type="Edm.String" Nullable="false" MaxLength="1"/>
+				<Property Name="CardGrade" Type="Edm.String" Nullable="false" MaxLength="1"/>
+				<Property Name="AffiliatedCardCode" Type="Edm.String" Nullable="false" MaxLength="6"/>
+				<Property Name="AffiliatedCardName" Type="Edm.String" Nullable="false" MaxLength="50"/>
+				<Property Name="CardNumber" Type="Edm.String" Nullable="false" MaxLength="16"/>
+				<Property Name="KoreaName" Type="Edm.String" Nullable="false" MaxLength="50"/>
+				<Property Name="EnglishName" Type="Edm.String" Nullable="false" MaxLength="50"/>
+				<Property Name="IdentificationNumber" Type="Edm.String" Nullable="false" MaxLength="13"/>
+				<Property Name="ExpiryDate" Type="Edm.String" Nullable="false" MaxLength="7"/>
+				<Property Name="DepartmentCode" Type="Edm.String" Nullable="false" MaxLength="20"/>
+				<Property Name="DepartmentName" Type="Edm.String" Nullable="false" MaxLength="50"/>
+				<Property Name="BillingPostalCode" Type="Edm.String" Nullable="false" MaxLength="6"/>
+				<Property Name="BillingAddressLine1" Type="Edm.String" Nullable="false" MaxLength="100"/>
+				<Property Name="BillingAddressLine2" Type="Edm.String" Nullable="false" MaxLength="100"/>
+				<Property Name="BillingTypePayment" Type="Edm.String" Nullable="false" MaxLength="1"/>
+				<Property Name="PaymentDate" Type="Edm.String" Nullable="false" MaxLength="2"/>
+				<Property Name="PaymentBank" Type="Edm.String" Nullable="false" MaxLength="10"/>
+				<Property Name="PaymentAccountNumber" Type="Edm.String" Nullable="false" MaxLength="20"/>
+				<Property Name="MemberPhoneNumber" Type="Edm.String" Nullable="false" MaxLength="14"/>
+				<Property Name="DeclarationType" Type="Edm.String" Nullable="false" MaxLength="1"/>
+				<Property Name="CardIssueDate" Type="Edm.String" Nullable="false" MaxLength="10"/>
+				<Property Name="CardCancellationDate" Type="Edm.String" Nullable="false" MaxLength="10"/>
+				<Property Name="SuspensionDate" Type="Edm.String" Nullable="false" MaxLength="10"/>
+				<Property Name="ReissuedCardNumber" Type="Edm.String" Nullable="false" MaxLength="16"/>
+				<Property Name="OrganizationName" Type="Edm.String" Nullable="false" MaxLength="50"/>
+				<Property Name="OrganizationCard" Type="Edm.String" Nullable="false" MaxLength="20"/>
+				<Property Name="BusinessLocationName" Type="Edm.String" Nullable="false" MaxLength="50"/>
+				<Property Name="UserNumberLG" Type="Edm.String" Nullable="false" MaxLength="30"/>
+				<Property Name="UserNameLG" Type="Edm.String" Nullable="false" MaxLength="50"/>
+				<Property Name="VehicleNumber" Type="Edm.String" Nullable="false" MaxLength="50"/>
+				<Property Name="ResearchCode" Type="Edm.String" Nullable="false" MaxLength="20"/>
+				<Property Name="ResearchName" Type="Edm.String" Nullable="false" MaxLength="50"/>
+				<Property Name="MembershipNumber" Type="Edm.String" Nullable="false" MaxLength="15"/>
+				<Property Name="MembershipName" Type="Edm.String" Nullable="false" MaxLength="50"/>
+				<Property Name="CompanyTypeNH" Type="Edm.String" Nullable="false" MaxLength="2"/>
+				<Property Name="VATRefundService" Type="Edm.String" Nullable="false" MaxLength="1"/>
+				<Property Name="VirtualAccountBankCode" Type="Edm.String" Nullable="false" MaxLength="10"/>
+				<Property Name="VirtualAccountNumber" Type="Edm.String" Nullable="false" MaxLength="20"/>
+				<Property Name="CardInitials" Type="Edm.String" Nullable="false" MaxLength="2"/>
+				<Property Name="KHNPNumber" Type="Edm.String" Nullable="false" MaxLength="14"/>
+				<Property Name="ReservedField" Type="Edm.String" Nullable="false" MaxLength="51"/>
+				<Property Name="CRLF" Type="Edm.String" Nullable="false" MaxLength="2"/>
+				<Property Name="SAP__Messages" Type="Collection(com.sap.gateway.srvd_a2x.zapi_corpcard_o4.v0001.SAP__Message)" Nullable="false"/>
+			</EntityType>
+			<ComplexType Name="SAP__Message">
+				<Property Name="code" Type="Edm.String" Nullable="false"/>
+				<Property Name="message" Type="Edm.String" Nullable="false"/>
+				<Property Name="target" Type="Edm.String"/>
+				<Property Name="additionalTargets" Type="Collection(Edm.String)" Nullable="false"/>
+				<Property Name="transition" Type="Edm.Boolean" Nullable="false"/>
+				<Property Name="numericSeverity" Type="Edm.Byte" Nullable="false"/>
+				<Property Name="longtextUrl" Type="Edm.String"/>
+			</ComplexType>
+			<EntityContainer Name="Container">
+				<EntitySet Name="Master" EntityType="com.sap.gateway.srvd_a2x.zapi_corpcard_o4.v0001.MasterType"/>
+				<EntitySet Name="UserInfo" EntityType="com.sap.gateway.srvd_a2x.zapi_corpcard_o4.v0001.UserInfoType"/>
+			</EntityContainer>
+			<Annotations Target="SAP__self.MasterType/CompanyCode">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="Company Code"/>
+				<Annotation Term="SAP__common.Heading" String="CoCd"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/CardNumber">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-카드번호"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/BusinessPartner">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="Business Partner"/>
+				<Annotation Term="SAP__common.QuickInfo" String="Business Partner Number"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/Category">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-구분"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/CompanyName">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-업체명(고객명)"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/BusinessNumber">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-사업자번호"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/CorporateNumber">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-기업번호"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/BusinessLocationNumber">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-사업장번호"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/CustomerNumber">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-고객(관리)번호"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/CardBrand">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-카드브랜드"/>
+				<Annotation Term="SAP__common.Heading" String="법인카드-카드브랜드(브랜드구분)"/>
+				<Annotation Term="SAP__common.QuickInfo" String="법인카드-카드브랜드(브랜드구분)"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/DomesticBrandCategory">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-국내브랜드구분"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/CardCategory">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-카드구분"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/CardSubCategory">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-카드세부구분(소지자구분)"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/CardProductCategory">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-카드상품구분"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/CardGrade">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-카드등급"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/AffiliatedCardCode">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-제휴카드코드"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/AffiliatedCardName">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="제휴카드명(카드상품)"/>
+				<Annotation Term="SAP__common.Heading" String="법인카드-제휴카드명(카드상품)"/>
+				<Annotation Term="SAP__common.QuickInfo" String="법인카드-제휴카드명(카드상품)"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/KoreaName">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-회원명(한글)"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/EnglishName">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-회원명(영문)"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/IdentificationNumber">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-회원주민등록번호"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/ExpiryDate">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-유효기간"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/DepartmentCode">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-소속부서코드"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/DepartmentName">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-소속부서명"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/BillingPostalCode">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-청구지 우편번호"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/BillingAddressLine1">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-청구지주소-1"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/BillingAddressLine2">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-청구지주소-2"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/BillingTypePayment">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-청구구분(결제)"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/PaymentDate">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-결제일자"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/PaymentBank">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-결제은행"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/PaymentAccountNumber">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-결제계좌번호"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/MemberPhoneNumber">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-회원전화번호"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/DeclarationType">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-제신고구분"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/CardIssueDate">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-카드발급일자"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/CardCancellationDate">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-카드해지일자"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/SuspensionDate">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-일시정지일자"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/ReissuedCardNumber">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-재발급이전카드번호"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/OrganizationName">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-조직명"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/OrganizationCard">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-조직카드"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/IsDelete">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="Deletion Indicator"/>
+				<Annotation Term="SAP__common.Heading" String="DlI"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/LocalCurrency">
+				<Annotation Term="SAP__common.IsCurrency"/>
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="Currency"/>
+				<Annotation Term="SAP__common.Heading" String="Crcy"/>
+				<Annotation Term="SAP__common.QuickInfo" String="Currency Key"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/ForeignCurrency">
+				<Annotation Term="SAP__common.IsCurrency"/>
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="Currency"/>
+				<Annotation Term="SAP__common.Heading" String="Crcy"/>
+				<Annotation Term="SAP__common.QuickInfo" String="Currency Key"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType">
+				<Annotation Term="SAP__common.Label" String="[FI] 법인카드 마스터"/>
+			</Annotations>
+			<Annotations Target="SAP__self.Container/Master">
+				<Annotation Term="SAP__capabilities.SearchRestrictions">
+					<Record>
+						<PropertyValue Property="Searchable" Bool="false"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="SAP__capabilities.InsertRestrictions">
+					<Record>
+						<PropertyValue Property="Insertable" Bool="false"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="SAP__capabilities.DeleteRestrictions">
+					<Record>
+						<PropertyValue Property="Deletable" Bool="false"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="SAP__capabilities.UpdateRestrictions">
+					<Record>
+						<PropertyValue Property="Updatable" Bool="false"/>
+						<PropertyValue Property="QueryOptions">
+							<Record>
+								<PropertyValue Property="SelectSupported" Bool="true"/>
+							</Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="SAP__core.OptimisticConcurrency">
+					<Collection/>
+				</Annotation>
+				<Annotation Term="SAP__capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="FilterExpressionRestrictions">
+							<Collection>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="CompanyCode"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="CardNumber"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="Category"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="CompanyName"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="BusinessNumber"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="CorporateNumber"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="BusinessLocationNumber"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="CustomerNumber"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="CardBrand"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="DomesticBrandCategory"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="CardCategory"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="CardSubCategory"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="CardProductCategory"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="CardGrade"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="AffiliatedCardCode"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="AffiliatedCardName"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="KoreaName"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="EnglishName"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="IdentificationNumber"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="ExpiryDate"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="DepartmentCode"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="DepartmentName"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="BillingPostalCode"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="BillingAddressLine1"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="BillingAddressLine2"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="BillingTypePayment"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="PaymentDate"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="PaymentBank"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="PaymentAccountNumber"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="MemberPhoneNumber"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="DeclarationType"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="CardIssueDate"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="CardCancellationDate"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="SuspensionDate"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="ReissuedCardNumber"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="OrganizationName"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="OrganizationCard"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="IsDelete"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SAP__self.Container">
+				<Annotation Term="SAP__CodeList.CurrencyCodes">
+					<Record>
+						<PropertyValue Property="Url" String="../../../../default/iwbep/common/0001;o=LOCAL/$metadata"/>
+						<PropertyValue Property="CollectionPath" String="Currencies"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="SAP__aggregation.ApplySupported">
+					<Record>
+						<PropertyValue Property="Transformations">
+							<Collection>
+								<String>aggregate</String>
+								<String>groupby</String>
+								<String>filter</String>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Rollup" EnumMember="SAP__aggregation.RollupType/None"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+				<Annotation Term="SAP__capabilities.FilterFunctions">
+					<Collection>
+						<String>eq</String>
+						<String>ne</String>
+						<String>gt</String>
+						<String>ge</String>
+						<String>lt</String>
+						<String>le</String>
+						<String>and</String>
+						<String>or</String>
+						<String>contains</String>
+						<String>startswith</String>
+						<String>endswith</String>
+						<String>any</String>
+						<String>all</String>
+					</Collection>
+				</Annotation>
+				<Annotation Term="SAP__capabilities.SupportedFormats">
+					<Collection>
+						<String>application/json</String>
+						<String>application/pdf</String>
+					</Collection>
+				</Annotation>
+				<Annotation Term="SAP__PDF.Features">
+					<Record>
+						<PropertyValue Property="DocumentDescriptionReference" String="../../../../default/iwbep/common/0001/$metadata"/>
+						<PropertyValue Property="DocumentDescriptionCollection" String="MyDocumentDescriptions"/>
+						<PropertyValue Property="ArchiveFormat" Bool="true"/>
+						<PropertyValue Property="Border" Bool="true"/>
+						<PropertyValue Property="CoverPage" Bool="true"/>
+						<PropertyValue Property="FitToPage" Bool="true"/>
+						<PropertyValue Property="FontName" Bool="true"/>
+						<PropertyValue Property="FontSize" Bool="true"/>
+						<PropertyValue Property="Margin" Bool="true"/>
+						<PropertyValue Property="Signature" Bool="true"/>
+						<PropertyValue Property="ResultSizeDefault" Int="20000"/>
+						<PropertyValue Property="ResultSizeMaximum" Int="20000"/>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/Category">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-구분"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/CompanyName">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-업체명(고객명)"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/BusinessNumber">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-사업자번호"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/CorporateNumber">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-기업번호"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/BusinessLocationNumber">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-사업장번호"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/CustomerNumber">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-고객(관리)번호"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/CardBrand">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-카드브랜드"/>
+				<Annotation Term="SAP__common.Heading" String="법인카드-카드브랜드(브랜드구분)"/>
+				<Annotation Term="SAP__common.QuickInfo" String="법인카드-카드브랜드(브랜드구분)"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/DomesticBrandCategory">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-국내브랜드구분"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/CardCategory">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-카드구분"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/CardSubCategory">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-카드세부구분(소지자구분)"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/CardProductCategory">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-카드상품구분"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/CardGrade">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-카드등급"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/AffiliatedCardCode">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-제휴카드코드"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/AffiliatedCardName">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="제휴카드명(카드상품)"/>
+				<Annotation Term="SAP__common.Heading" String="법인카드-제휴카드명(카드상품)"/>
+				<Annotation Term="SAP__common.QuickInfo" String="법인카드-제휴카드명(카드상품)"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/CardNumber">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-카드번호"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/KoreaName">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-회원명(한글)"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/EnglishName">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-회원명(영문)"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/IdentificationNumber">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-회원주민등록번호"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/ExpiryDate">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-유효기간"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/DepartmentCode">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-소속부서코드"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/DepartmentName">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-소속부서명"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/BillingPostalCode">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-청구지 우편번호"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/BillingAddressLine1">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-청구지주소-1"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/BillingAddressLine2">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-청구지주소-2"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/BillingTypePayment">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-청구구분(결제)"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/PaymentDate">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-결제일자"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/PaymentBank">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-결제은행"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/PaymentAccountNumber">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-결제계좌번호"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/MemberPhoneNumber">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-회원전화번호"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/DeclarationType">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-제신고구분"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/CardIssueDate">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-카드발급일자"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/CardCancellationDate">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-카드해지일자"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/SuspensionDate">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-일시정지일자"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/ReissuedCardNumber">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-재발급이전카드번호"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/OrganizationName">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-조직명"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/OrganizationCard">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-조직카드"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/BusinessLocationName">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-사업장(부서)명"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/UserNumberLG">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-이용자번호((구)엘지)"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/UserNameLG">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-이용자명((구)엘지)"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/VehicleNumber">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-차량번호"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/ResearchCode">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-연구비프로젝트코드"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/ResearchName">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-연구비프로젝트명"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/MembershipNumber">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-회원사회원번호"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/MembershipName">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-회원사회원명"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/CompanyTypeNH">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-업체종류코드(농협)"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/VATRefundService">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-부가세환급서비스"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/VirtualAccountBankCode">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-가상계좌은행코드"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/VirtualAccountNumber">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-가상계좌번호"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/CardInitials">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-카드사이니셜"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/KHNPNumber">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="한수원전문일련번호"/>
+				<Annotation Term="SAP__common.Heading" String="법인카드-한수원전문일련번호"/>
+				<Annotation Term="SAP__common.QuickInfo" String="법인카드-한수원전문일련번호"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/ReservedField">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-예비필드"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/CRLF">
+				<Annotation Term="SAP__common.IsUpperCase"/>
+				<Annotation Term="SAP__common.Label" String="법인카드-CRLF(0x0D0x0A)"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType">
+				<Annotation Term="SAP__common.Label" String="[FI] 법인카드-기본정보 I/F"/>
+				<Annotation Term="SAP__common.Messages" Path="SAP__Messages"/>
+			</Annotations>
+			<Annotations Target="SAP__self.Container/UserInfo">
+				<Annotation Term="SAP__capabilities.SearchRestrictions">
+					<Record>
+						<PropertyValue Property="Searchable" Bool="false"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="SAP__capabilities.DeleteRestrictions">
+					<Record>
+						<PropertyValue Property="Deletable" Bool="false"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="SAP__core.OptimisticConcurrency">
+					<Collection/>
+				</Annotation>
+				<Annotation Term="SAP__capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="FilterExpressionRestrictions">
+							<Collection>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="Category"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="CompanyName"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="BusinessNumber"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="CorporateNumber"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="BusinessLocationNumber"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="CustomerNumber"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="CardBrand"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="DomesticBrandCategory"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="CardCategory"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="CardSubCategory"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="CardProductCategory"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="CardGrade"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="AffiliatedCardCode"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="AffiliatedCardName"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="CardNumber"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="KoreaName"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="EnglishName"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="IdentificationNumber"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="ExpiryDate"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="DepartmentCode"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="DepartmentName"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="BillingPostalCode"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="BillingAddressLine1"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="BillingAddressLine2"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="BillingTypePayment"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="PaymentDate"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="PaymentBank"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="PaymentAccountNumber"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="MemberPhoneNumber"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="DeclarationType"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="CardIssueDate"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="CardCancellationDate"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="SuspensionDate"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="ReissuedCardNumber"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="OrganizationName"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="OrganizationCard"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="BusinessLocationName"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="UserNumberLG"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="UserNameLG"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="VehicleNumber"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="ResearchCode"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="ResearchName"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="MembershipNumber"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="MembershipName"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="CompanyTypeNH"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="VATRefundService"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="VirtualAccountBankCode"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="VirtualAccountNumber"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="CardInitials"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="KHNPNumber"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="ReservedField"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+								<Record>
+									<PropertyValue Property="Property" PropertyPath="CRLF"/>
+									<PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="SAP__capabilities.UpdateRestrictions">
+					<Record>
+						<PropertyValue Property="QueryOptions">
+							<Record>
+								<PropertyValue Property="SelectSupported" Bool="true"/>
+							</Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/DomesticLimit">
+				<Annotation Term="SAP__common.Label" String="국내한도"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/OverseasLimit">
+				<Annotation Term="SAP__common.Label" String="국외한도"/>
+			</Annotations>
+			<Annotations Target="SAP__self.MasterType/EmployeeNumber">
+				<Annotation Term="SAP__common.Label" String="사원번호"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/InterfaceDate">
+				<Annotation Term="SAP__common.Label" String="I/F Date"/>
+			</Annotations>
+			<Annotations Target="SAP__self.UserInfoType/InterfaceTime">
+				<Annotation Term="SAP__common.Label" String="I/F Time"/>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
